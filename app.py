@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext
 import os
 import config
-from image_area_detector import find_areas
+from simple_object_detector import detect_objects_simple
 
 class ImageAreaDetectorApp:
     def __init__(self, master):
@@ -66,7 +66,7 @@ class ImageAreaDetectorApp:
 
         self.log_message(f"Attempting to find areas in: {image_path}")
         try:
-            find_areas(image_path)
+            detect_objects_simple(image_path)
             self.log_message("Image processing completed. Check OpenCV window.")
         except FileNotFoundError:
             self.log_message(f"Error: File not found during processing: {image_path}")
